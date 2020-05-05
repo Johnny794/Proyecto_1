@@ -1,0 +1,67 @@
+<html>  
+    <body>
+        
+        
+
+    <h2 align="center" style="color: grey; " >
+    SURTIALEJANDRA
+    
+    
+    </h2>
+    {% include "parte_superior/plantilla_barra.html" %}
+
+
+    <p> El nombre del profesor es: {{nombre_persona|capfirst }} {{apellido_persona.upper}}</p> 
+    <img src="bateria.jpg"/>
+
+    <p  align="right"> 
+        {{momento_actual.day}} / {{momento_actual.month}} / {{momento_actual.year}}
+    </p>   
+    
+
+      {#los comentarios van de esta manera #} 
+
+      {% comment %} Y asi para
+      comentarios de varias lineas {%endcomment  %}
+
+<p> <strong>servicios: </strong>
+    {% for servicio in servicios  %}
+        {{servicio}}
+    {% endfor %}
+
+     </p>
+  
+     <p>  OPCION 2   </p>    
+
+ <p> <strong>servicios: </strong>
+    {% for servicio in servicios  %}
+
+         <p>{{servicio}}</p>
+     
+    {% endfor %}
+    
+</p>
+
+<p>  OPCION 3   </p>    
+
+<p> 
+    <strong>servicios: </strong>
+
+    <ul>  
+    {%if servicios %}
+        {% for servicio in servicios  %}
+
+            <li>{{servicio}}</li>
+    
+        {% endfor %}
+    
+    {%else%}
+    <p> <strong>No hay Servicios Disponibles </strong>  </p> 
+        
+    {% endif %}
+
+
+   </ul>
+</p>  
+</body>
+</html>
